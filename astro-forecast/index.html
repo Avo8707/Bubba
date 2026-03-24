@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Forecast - Daily Astrological Guidance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="stars-canvas"></canvas>
+    <div class="moon"></div>
+
+    <!-- Setup Modal -->
+    <div id="setup-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Welcome to the Celestial Forecast</h2>
+            <p class="modal-subtitle">Choose your zodiac signs to unveil today's cosmic guidance.</p>
+
+            <div class="sign-selectors">
+                <div class="selector-group">
+                    <label>Me</label>
+                    <div class="sign-grid" id="grid-me"></div>
+                </div>
+                <div class="selector-group">
+                    <label>ORYNE</label>
+                    <div class="sign-grid" id="grid-oryne"></div>
+                </div>
+            </div>
+
+            <button id="btn-confirm" class="btn-glow" disabled>Reveal the Stars</button>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="app" class="hidden">
+        <header>
+            <div class="header-ornament"></div>
+            <h1>Celestial Forecast</h1>
+            <p class="date-line" id="date-line"></p>
+            <p class="tagline">Daily guidance written in the stars</p>
+            <button id="btn-change" class="btn-subtle">Change Signs</button>
+            <div class="header-ornament"></div>
+        </header>
+
+        <!-- Forecast Cards -->
+        <div class="forecasts">
+            <!-- Me -->
+            <section class="forecast-card" id="card-me">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <span class="card-symbol" id="symbol-me"></span>
+                    <div>
+                        <span class="person-label">Me</span>
+                        <h2 id="sign-me"></h2>
+                        <span class="sign-dates" id="dates-me"></span>
+                    </div>
+                </div>
+                <div class="card-body" id="body-me"></div>
+            </section>
+
+            <!-- ORYNE -->
+            <section class="forecast-card" id="card-oryne">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <span class="card-symbol" id="symbol-oryne"></span>
+                    <div>
+                        <span class="person-label">ORYNE</span>
+                        <h2 id="sign-oryne"></h2>
+                        <span class="sign-dates" id="dates-oryne"></span>
+                    </div>
+                </div>
+                <div class="card-body" id="body-oryne"></div>
+            </section>
+        </div>
+
+        <!-- Compatibility Section -->
+        <section id="compatibility" class="compat-section">
+            <div class="compat-glow"></div>
+            <h2 class="compat-title">Cosmic Compatibility</h2>
+            <div class="compat-signs" id="compat-signs"></div>
+            <div class="compat-meter-wrap">
+                <div class="compat-meter" id="compat-meter"></div>
+            </div>
+            <p class="compat-pct" id="compat-pct"></p>
+            <div class="compat-grid">
+                <div class="compat-card">
+                    <h4>Emotional Bond</h4>
+                    <p id="compat-emotional"></p>
+                </div>
+                <div class="compat-card">
+                    <h4>Communication</h4>
+                    <p id="compat-communication"></p>
+                </div>
+                <div class="compat-card">
+                    <h4>Shared Adventures</h4>
+                    <p id="compat-adventures"></p>
+                </div>
+                <div class="compat-card">
+                    <h4>Today's Advice</h4>
+                    <p id="compat-advice"></p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>The stars illuminate your path, but you choose your steps.</p>
+            <p class="footer-sub">Forecasts regenerate daily at midnight.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
